@@ -1,11 +1,10 @@
 import "./App.css";
+import KkNavBar from "./components/KkNavBar";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Test</h1>
-      </header>
+      <KkNavBar />
     </div>
   );
 }
