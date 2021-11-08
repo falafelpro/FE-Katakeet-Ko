@@ -1,10 +1,10 @@
 import "./App.css";
-import KkNavBar from "./components/KkNavBar";
+import NavBar from "./components/NavBar";
 
 function App() {
   return (
     <div className="App">
-      <KkNavBar />
+      <NavBar />
     </div>
   );
 }

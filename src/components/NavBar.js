@@ -2,20 +2,20 @@ import React from "react";
 import { Navbar, Container } from "react-bootstrap";
 import NavLogo from "../assets/wChick.png";
 
-function KkNavBar() {
+function NavBar() {
   return (
     <div>
       <Navbar bg="dark" variant="dark">
-        <Container>
+        <Container fluid>
           <Navbar.Brand href="#home">
             <img
-              alt=""
+              alt="NavLogo"
               src={NavLogo}
-              width="30"
-              height="30"
+              width="40"
+              height="40"
               className="d-inline-block align-top"
-            />{" "}
-            Kakakeet Ko.
+            />
+            &nbsp; Katakeet Ko.
           </Navbar.Brand>
         </Container>
       </Navbar>
@@ -23,4 +23,4 @@ function KkNavBar() {
   );
 }
 
-export default KkNavBar;
+export default NavBar;
