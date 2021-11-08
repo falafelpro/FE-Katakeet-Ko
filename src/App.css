@@ -5,3 +5,16 @@ body {
 .App {
   text-align: center;
 }
+
+.fontcolor {
+  color: white;
+}
+
+.home {
+  display: block;
+  margin: 50px;
+}
+
+.home img {
+  width: 100px;
+}
