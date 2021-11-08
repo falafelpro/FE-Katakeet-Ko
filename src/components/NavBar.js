@@ -4,6 +4,7 @@ import NavLogo from "../assets/wChick.png";
 import Signup from "./Signup";
 import Signin from "./Signin";
 import authStore from "../stores/authstore";
+import { observer } from "mobx-react";
 
 function NavBar() {
   return (
@@ -23,18 +24,21 @@ function NavBar() {
           <Nav>
             {authStore.user ? (
               <>
-                <h4 className="margin">Welcome, {authStore.user.username}</h4>
+                <h4 className="fontcolor">
+                  Welcome, {authStore.user.username}
+                </h4>
+                &nbsp;
                 <Button onClick={authStore.signout} variant="outline-danger">
                   Sign Out
                 </Button>
               </>
             ) : (
               <>
-                <label className="margin">
+                <label>
                   <Signin />
                 </label>
                 &nbsp;
-                <label className="margin">
+                <label>
                   <Signup />
                 </label>
               </>
@@ -46,4 +50,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default observer(NavBar);
