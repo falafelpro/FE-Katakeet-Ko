@@ -1,23 +1,23 @@
 import { React, useState } from "react";
 import { Form, Modal, Button, InputGroup } from "react-bootstrap";
-import categoryStore from "../stores/categoryStore";
+import ingredientStore from "../stores/ingredientStore";
 
-function CategoryModal(props) {
-  const [category, setCategory] = useState({
+function IngredientModal(props) {
+  const [ingredient, setIngredient] = useState({
     name: "",
   });
   const handleChange = (e) => {
-    setCategory({ ...category, [e.target.name]: e.target.value });
+    setIngredient({ ...ingredient, [e.target.name]: e.target.value });
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    categoryStore.createCategory(category);
+    ingredientStore.createIngredient(ingredient);
     props.closeModal(); // this is to close the modal that is shown
   };
   return (
     <Modal className="" centered show={props.isOpen} onHide={props.closeModal}>
       <Modal.Header className="">
-        <Modal.Title>Create a Category</Modal.Title>
+        <Modal.Title>Create a Ingredient</Modal.Title>
       </Modal.Header>
       <Modal.Body className="">
         <Form onSubmit={handleSubmit}>
@@ -34,11 +34,11 @@ function CategoryModal(props) {
       </Modal.Body>
       <Modal.Footer className="">
         <Button className="" variant="primary" onClick={handleSubmit}>
-          Create Category
+          Create Ingredient
         </Button>
       </Modal.Footer>
     </Modal>
   );
 }
 
-export default CategoryModal;
+export default IngredientModal;
