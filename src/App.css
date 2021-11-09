@@ -18,3 +18,41 @@ body {
 .home img {
   width: 100px;
 }
+
+/* Cards */
+
+.scrolling-wrapper {
+  overflow-x: auto;
+}
+
+.subtitle {
+  font-size: 1.25em;
+  opacity: 0.65;
+}
+
+.card-block {
+  height: 100px;
+  width: 100px;
+  background-color: #fff;
+  border: none;
+  background-position: center;
+  background-size: cover;
+  transition: all 0.2s ease-in-out !important;
+  border-radius: 50% !important;
+}
+
+.card-block:hover {
+  transform: translateY(-5px);
+  box-shadow: none;
+  opacity: 0.9;
+}
+
+.card-1 {
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+}
