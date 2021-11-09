@@ -19,7 +19,11 @@ class CategoryStore {
 
   createCategory = async (category) => {
     try {
-      const response = await apis.post("/categories", category);
+      const formData = new FormData();
+      for (const key in category) {
+        formData.append(key, category[key]);
+      }
+      const response = await apis.post("/categories", formData);
       this.categories.push(response.data);
     } catch (error) {
       console.error("CategoryStore -> createCategory -> error", error);

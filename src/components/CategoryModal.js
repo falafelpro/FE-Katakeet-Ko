@@ -1,14 +1,18 @@
 import { React, useState } from "react";
-import { Form, Modal, Button, InputGroup } from "react-bootstrap";
+import { Form, Modal, Button, InputGroup, FormControl } from "react-bootstrap";
 import categoryStore from "../stores/categoryStore";
 
 function CategoryModal(props) {
   const [category, setCategory] = useState({
     name: "",
+    image: "",
   });
   const handleChange = (e) => {
     setCategory({ ...category, [e.target.name]: e.target.value });
   };
+  const handleImage = (event) =>
+    setCategory({ ...category, image: event.target.files[0] });
+
   const handleSubmit = (e) => {
     e.preventDefault();
     categoryStore.createCategory(category);
@@ -21,22 +25,31 @@ function CategoryModal(props) {
       </Modal.Header>
       <Modal.Body className="">
         <Form onSubmit={handleSubmit}>
-          <InputGroup>
+          <InputGroup className="mb-3">
             <InputGroup.Text>Name</InputGroup.Text>
-            <Form.Control type="text" name="name" onChange={handleChange} />
+            <FormControl
+              placeholder="Category's name"
+              name="name"
+              type="text"
+              onChange={handleChange}
+            />
           </InputGroup>
           <br />
-          <InputGroup>
+          <InputGroup className="mb-3">
             <InputGroup.Text>Image</InputGroup.Text>
-            <Form.Control type="text" name="slug" onChange={handleChange} />
+            <FormControl
+              name="image"
+              type="file"
+              onChange={handleImage}
+              placeholder="Image"
+            />
           </InputGroup>
+          <Button className="" variant="primary" onClick={handleSubmit}>
+            Create Category
+          </Button>
         </Form>
       </Modal.Body>
-      <Modal.Footer className="">
-        <Button className="" variant="primary" onClick={handleSubmit}>
-          Create Category
-        </Button>
-      </Modal.Footer>
+      <Modal.Footer className=""></Modal.Footer>
     </Modal>
   );
 }
