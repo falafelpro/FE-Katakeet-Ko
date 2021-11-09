@@ -4,7 +4,7 @@ import { observer } from "mobx-react";
 function CategoryItem({ category }) {
   return (
     <div className="col-1">
-      <div className="card card-block card-1">
+      <div className="card card-block card-1 circle">
         <img src={category.image} alt={category.name}></img>
       </div>
       <p>{category.name}</p>
