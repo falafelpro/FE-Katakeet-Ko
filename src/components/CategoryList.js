@@ -1,9 +1,8 @@
 import { React, useState } from "react";
 import { Button } from "react-bootstrap";
 import { observer } from "mobx-react";
-import categoryStore from "../stores/categoryStore";
 import authStore from "../stores/authstore";
-
+import categoryStore from "../stores/categoryStore";
 import CategoryModal from "./CategoryModal";
 import CategoryItem from "./CategoryItem";
 
