@@ -3,8 +3,8 @@ import { observer } from "mobx-react";
 
 function CategoryItem({ category }) {
   return (
-    <div class="col-1">
-      <div class="card card-block card-1"></div>
+    <div className="col-1">
+      <div className="card card-block card-1"></div>
       <p>{category.name}</p>
     </div>
   );
