@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-modal";
 import authStore from "../stores/authstore";
 
+// REVIEW: Move the customsStyles into a `styles.js` file, then you can import it in both here and the Signup component since they're using the same styling.
 const customStyles = {
   content: {
     top: "50%",

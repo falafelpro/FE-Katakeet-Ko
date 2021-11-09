@@ -2,6 +2,8 @@ import { makeAutoObservable } from "mobx";
 import apis from "./apis";
 import decode from "jwt-decode";
 
+// REVIEW: Correct file name is `authStore.js`. Keep in mind that if you rename your file on a macbook, git won't detect the change as it's case insensitive.
+
 class AuthStore {
   user = null;
 

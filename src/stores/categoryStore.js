@@ -10,6 +10,7 @@ class CategoryStore {
 
   fetchCategories = async () => {
     try {
+      // REVIEW: the common naming convention is res not response
       const response = await apis.get("/categories");
       this.categories = response.data;
     } catch (error) {

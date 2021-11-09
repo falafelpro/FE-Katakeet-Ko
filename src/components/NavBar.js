@@ -1,10 +1,16 @@
 import React from "react";
+import { observer } from "mobx-react";
+
+// Components
+import Signin from "./Signin";
+import Signup from "./Signup";
+
+// Store
+import authStore from "../stores/authstore";
+
+// Styling
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
 import NavLogo from "../assets/wChick.png";
-import Signup from "./Signup";
-import Signin from "./Signin";
-import authStore from "../stores/authstore";
-import { observer } from "mobx-react";
 
 function NavBar() {
   return (
@@ -19,6 +25,7 @@ function NavBar() {
               height="40"
               className="d-inline-block align-top"
             />
+            {/* Replace &nbsp; with proper styling */}
             &nbsp; Katakeet Ko.
           </Navbar.Brand>
           <Nav>
@@ -34,6 +41,7 @@ function NavBar() {
               </>
             ) : (
               <>
+                {/* Q: Is the label adding styling? */}
                 <label>
                   <Signin />
                 </label>
