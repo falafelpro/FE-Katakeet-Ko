@@ -6,13 +6,13 @@ import CategoryModal from "./CategoryModal";
 import CategoryItem from "./CategoryItem";
 import addCategory from "../assets/plus.png";
 
-function CategoryList() {
+function CategoryList(props) {
   const [isOpen, setIsOpen] = useState(false);
   const closeModal = () => setIsOpen(false);
   const openModal = () => setIsOpen(true);
 
   const categoryList = categoryStore.categories.map((category) => (
-    <CategoryItem category={category} />
+    <CategoryItem category={category} setCategory={props.setCategory} />
   ));
 
   return (

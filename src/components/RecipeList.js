@@ -1,21 +1,46 @@
-import React from "react";
+import { React, useState } from "react";
 import Home from "./Home";
 import CategoryList from "./CategoryList";
 import recipeStore from "../stores/recipeStore";
 import RecipeItem from "./RecipeItem";
 import { observer } from "mobx-react";
+import RecipeModal from "./RecipeModal";
+import authStore from "../stores/authstore";
 
 function RecipeList() {
+  const [isOpen, setIsOpen] = useState(false);
+  const closeModal = () => setIsOpen(false);
+  const openModal = () => setIsOpen(true);
+  const [category, setCategory] = useState(null);
+
   const recipesList = recipeStore.recipes.map((recipe) => (
     <RecipeItem recipe={recipe} />
   ));
   return (
     <div>
       <Home />
-      <div class="container-fluid">
-        <CategoryList />
+      <div className="container-fluid">
+        <CategoryList setCategory={setCategory} />
       </div>
-      <div>{recipesList}</div>
+      <div className="card-group">
+        <div className="card m-2 border border-info rounded">
+          <div className="card-text">
+            <button
+              className="btn btn-primary my-auto"
+              type="button"
+              onClick={openModal}
+            >
+              Add Recipe
+            </button>
+          </div>
+        </div>
+        {recipesList}
+        <RecipeModal
+          isOpen={isOpen}
+          closeModal={closeModal}
+          category={category}
+        />
+      </div>
     </div>
   );
 }
