@@ -4,7 +4,7 @@ import authStore from "../stores/authstore";
 import categoryStore from "../stores/categoryStore";
 import CategoryModal from "./CategoryModal";
 import CategoryItem from "./CategoryItem";
-import addCategory from "../assets/plus.png";
+import addCategoryButton from "../assets/plus.png";
 
 function CategoryList() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +20,7 @@ function CategoryList() {
       <div className="category-container">
         {authStore.user ? (
           <button className="category-add" onClick={openModal}>
-            <img src={addCategory} alt="addCategory" />
+            <img src={addCategoryButton} alt="addCategory" />
           </button>
         ) : null}
         <div>

@@ -2,6 +2,7 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import RecipeList from "./components/RecipeList";
+import RecipeDetail from "./components/RecipeDetail";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
 
       <Routes>
         <Route exact path="/" element={<RecipeList />} />
+        <Route path="/recipe-detail" element={<RecipeDetail />} />
       </Routes>
     </div>
   );
