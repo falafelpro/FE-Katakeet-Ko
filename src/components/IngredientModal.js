@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import React, { useState } from "react";
 import { Form, Modal, Button, InputGroup } from "react-bootstrap";
 import ingredientStore from "../stores/ingredientStore";
 

@@ -67,7 +67,6 @@ body {
   border-style: solid;
   border-color: black;
   border-radius: 10px;
-
   overflow: scroll;
   scrollbar-width: none;
 }
@@ -98,16 +97,42 @@ body {
 
 /* Recipe Detail */
 
-/* Recipe Steps */
+.ingredients-container {
+  display: block;
+  border-style: solid;
+  border-color: black;
+  border-radius: 10px;
+  text-align: center;
+  height: 300px;
+  width: 300px;
+  overflow-y: auto;
+  margin-top: 20vh;
+  margin-left: 5vh;
+  scrollbar-width: none;
 
-/* body {
+  /* display: flex;
+  justify-content: space-between;
+  overflow-y: auto;
+  white-space: nowrap;
+  text-align: center;
+  height: 50vh;
+  width: 150px;
+  padding: 10px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  border-style: solid;
+  border-color: black;
+  border-radius: 10px;
+  overflow: scroll;
+  scrollbar-width: none; */
+}
+
+.ingredients-block {
   width: 100%;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 50px 30px;
-} */
+  height: 100%;
+}
+
+/* Recipe Notepad */
 
 .notepad {
   width: 80%;
@@ -116,7 +141,7 @@ body {
   border-radius: 0 0 10px 10px;
   overflow: hidden;
   text-align: start;
-  margin-top: 20vh;
+  /* margin-top: 5vh; */
   margin-left: auto;
   margin-right: 5vw;
 }
