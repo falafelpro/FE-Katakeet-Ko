@@ -1,6 +1,6 @@
 import React from "react";
-import Home from "./components/Home";
-import CategoryList from "./components/CategoryList";
+import Home from "./Home";
+import CategoryList from "./CategoryList";
 import recipeStore from "../stores/recipeStore";
 import RecipeItem from "./RecipeItem";
 

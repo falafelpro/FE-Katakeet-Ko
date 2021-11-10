@@ -11,22 +11,22 @@ function CategoryList() {
   const closeModal = () => setIsOpen(false);
   const openModal = () => setIsOpen(true);
 
-  const foundCategories = categoryStore.categories.map((category) => (
+  const categoryList = categoryStore.categories.map((category) => (
     <CategoryItem category={category} />
   ));
 
   return (
     <div>
-      {authStore.user ? (
-        <button className="card-block" onClick={openModal}>
-          <img src={addCategory} alt="addCategory" />
-        </button>
-      ) : null}
       <div className="category-container">
+        {authStore.user ? (
+          <button className="category-add" onClick={openModal}>
+            <img src={addCategory} alt="addCategory" />
+          </button>
+        ) : null}
         <div>
           <CategoryModal isOpen={isOpen} closeModal={closeModal} />
         </div>
-        {foundCategories}
+        {categoryList}
       </div>
     </div>
   );

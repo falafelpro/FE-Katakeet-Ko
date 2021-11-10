@@ -1,14 +1,14 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
-import RecipeDetail from "./components/RecipeDetail";
+import RecipeList from "./components/RecipeList";
 
 function App() {
   return (
     <div className="App">
       <NavBar />
       <Routes>
-        <Route exact path="/" element={<RecipeDetail />} />
+        <Route exact path="/" element={<RecipeList />} />
       </Routes>
     </div>
   );
