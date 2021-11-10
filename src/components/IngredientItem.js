@@ -4,7 +4,7 @@ import { observer } from "mobx-react";
 function IngredientItem({ ingredient }) {
   return (
     <div className="col-1">
-      <div className="card-block">
+      <div className="center">
         <p>{ingredient.name}</p>
       </div>
     </div>
