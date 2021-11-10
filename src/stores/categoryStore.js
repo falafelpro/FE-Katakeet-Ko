@@ -1,5 +1,5 @@
 import { makeAutoObservable } from "mobx";
-import apis from "./apis";
+import api from "./api";
 
 class CategoryStore {
   categories = [];
@@ -10,7 +10,7 @@ class CategoryStore {
 
   fetchCategories = async () => {
     try {
-      const response = await apis.get("/categories");
+      const response = await api.get("/categories");
       this.categories = response.data;
     } catch (error) {
       console.error("CategoryStore -> fetchCategories -> error", error);
@@ -23,7 +23,7 @@ class CategoryStore {
       for (const key in category) {
         formData.append(key, category[key]);
       }
-      const response = await apis.post("/categories", formData);
+      const response = await api.post("/categories", formData);
       this.categories.push(response.data);
     } catch (error) {
       console.error("CategoryStore -> createCategory -> error", error);
