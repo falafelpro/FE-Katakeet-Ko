@@ -27,6 +27,7 @@ class AuthStore {
   signin = async (userData) => {
     try {
       const res = await api.post("/signin", userData);
+      localStorage.setItem("myToken", res.data.token);
       this.setUser(res.data.token);
     } catch (error) {
       console.log("AuthStore -> signin -> error", error);
