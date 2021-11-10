@@ -1,11 +1,10 @@
-import { React, useState } from "react";
+import React, { useState } from "react";
 import Home from "./Home";
 import CategoryList from "./CategoryList";
 import recipeStore from "../stores/recipeStore";
 import RecipeItem from "./RecipeItem";
 import { observer } from "mobx-react";
 import RecipeModal from "./RecipeModal";
-import authStore from "../stores/authstore";
 
 function RecipeList() {
   const [isOpen, setIsOpen] = useState(false);

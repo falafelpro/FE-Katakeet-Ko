@@ -18,14 +18,14 @@ function CategoryList(props) {
   return (
     <div>
       <div className="category-container">
-        {authStore.user ? (
-          <button className="category-add" onClick={openModal}>
-            <img src={addCategoryButton} alt="addCategory" />
-          </button>
-        ) : null}
         <div>
-          <CategoryModal isOpen={isOpen} closeModal={closeModal} />
+          {authStore.user ? (
+            <button className="category-add" onClick={openModal}>
+              <img src={addCategoryButton} alt="addCategory" />
+            </button>
+          ) : null}
         </div>
+        <CategoryModal isOpen={isOpen} closeModal={closeModal} />
         {categoryList}
       </div>
     </div>
