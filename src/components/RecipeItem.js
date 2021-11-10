@@ -2,7 +2,7 @@ import React from "react";
 import "./Card.css";
 function RecipeItem({ recipe }) {
   return (
-    <div className="card">
+    <div className="card m-2 border">
       <div className="card-header">
         <div className="profile">
           <span className="letter">{recipe.owner.name}</span>
