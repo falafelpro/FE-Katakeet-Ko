@@ -6,8 +6,8 @@ function CategoryItem({ category }) {
     <div className="col-1">
       <div className="card-block">
         <img src={category.image} alt={category.name}></img>
+        <p>{category.name}</p>
       </div>
-      <p>{category.name}</p>
     </div>
   );
 }
