@@ -1,5 +1,5 @@
 import { makeAutoObservable } from "mobx";
-import apis from "./apis";
+import api from "./api";
 
 class IngredientStore {
   ingredients = [];
@@ -10,7 +10,7 @@ class IngredientStore {
 
   fetchIngredients = async () => {
     try {
-      const response = await apis.get("/ingredients");
+      const response = await api.get("/ingredients");
       this.ingredients = response.data;
     } catch (error) {
       console.error("IngredientStore -> fetchIngredients -> error", error);
@@ -19,7 +19,7 @@ class IngredientStore {
 
   createIngredient = async (ingredient) => {
     try {
-      const response = await apis.post("/ingredients", ingredient);
+      const response = await api.post("/ingredients", ingredient);
       this.ingredients.push(response.data);
     } catch (error) {
       console.error("IngredientStore -> createIngredient -> error", error);

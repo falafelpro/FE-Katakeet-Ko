@@ -7,9 +7,8 @@ function CategoryModal(props) {
     name: "",
     image: "",
   });
-  const handleChange = (e) => {
+  const handleChange = (e) =>
     setCategory({ ...category, [e.target.name]: e.target.value });
-  };
   const handleImage = (event) =>
     setCategory({ ...category, image: event.target.files[0] });
 

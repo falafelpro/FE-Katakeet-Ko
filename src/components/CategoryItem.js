@@ -4,10 +4,10 @@ import { observer } from "mobx-react";
 function CategoryItem({ category }) {
   return (
     <div className="col-1">
-      <div className="card card-block card-1 circle">
+      <div className="card-block">
         <img src={category.image} alt={category.name}></img>
+        <p>{category.name}</p>
       </div>
-      <p>{category.name}</p>
     </div>
   );
 }

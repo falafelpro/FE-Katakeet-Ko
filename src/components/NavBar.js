@@ -17,27 +17,25 @@ function NavBar() {
               src={NavLogo}
               width="40"
               height="40"
-              className="d-inline-block align-top"
+              className="d-inline-block align-top navlogo-margin"
             />
-            &nbsp; Katakeet Ko.
+            Katakeet Ko.
           </Navbar.Brand>
           <Nav>
             {authStore.user ? (
               <>
-                <h4 className="fontcolor">
+                <h4 className="fontcolor user-margin">
                   Welcome, {authStore.user.username}
                 </h4>
-                &nbsp;
                 <Button onClick={authStore.signout} variant="outline-danger">
                   Sign Out
                 </Button>
               </>
             ) : (
               <>
-                <label>
+                <label className="buttons-margin">
                   <Signin />
                 </label>
-                &nbsp;
                 <label>
                   <Signup />
                 </label>
