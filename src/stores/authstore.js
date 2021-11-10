@@ -17,7 +17,7 @@ class AuthStore {
 
   signup = async (userData) => {
     try {
-      const res = await api.post("/kk/signup", userData);
+      const res = await api.post("/signup", userData);
       this.setUser(res.data.token);
     } catch (error) {
       console.log("AuthStore -> signup -> error", error);
@@ -26,7 +26,7 @@ class AuthStore {
 
   signin = async (userData) => {
     try {
-      const res = await api.post("/kk/signin", userData);
+      const res = await api.post("/signin", userData);
       this.setUser(res.data.token);
     } catch (error) {
       console.log("AuthStore -> signin -> error", error);
