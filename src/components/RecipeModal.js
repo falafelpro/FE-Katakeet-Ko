@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Form, Modal, Button, InputGroup, FormControl } from "react-bootstrap";
 import recipeStore from "../stores/recipeStore";
 

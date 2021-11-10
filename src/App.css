@@ -41,6 +41,8 @@ body {
   transition: all 0.2s ease-in-out;
   border-radius: 50%;
   position: sticky;
+  padding: 10px;
+  background-color: white;
 }
 
 .category-add:hover {
@@ -55,9 +57,7 @@ body {
 
 .category-container {
   display: flex;
-  justify-content: space-between;
-  overflow-x: auto;
-  white-space: nowrap;
+  overflow-x: scroll;
   text-align: center;
   height: 150px;
   width: 50vw;
@@ -67,7 +67,8 @@ body {
   border-style: solid;
   border-color: black;
   border-radius: 10px;
-  overflow: scroll;
+  overflow-y: hidden;
+  /* overflow: scroll; */
   scrollbar-width: none;
 }
 
@@ -77,6 +78,7 @@ body {
   transition: all 0.2s ease-in-out;
   border-radius: 50% !important;
   text-align: center;
+  padding: 10px;
 }
 
 .card-block:hover {
@@ -109,22 +111,6 @@ body {
   margin-top: 20vh;
   margin-left: 5vh;
   scrollbar-width: none;
-
-  /* display: flex;
-  justify-content: space-between;
-  overflow-y: auto;
-  white-space: nowrap;
-  text-align: center;
-  height: 50vh;
-  width: 150px;
-  padding: 10px;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  border-style: solid;
-  border-color: black;
-  border-radius: 10px;
-  overflow: scroll;
-  scrollbar-width: none; */
 }
 
 .ingredients-block {
