@@ -20,12 +20,14 @@ function App() {
     <div className="App">
       <NavBar />
       <Home />
-      <Routes>
+      <RecipeList />
+      {/* <Routes>
         <Route exact path="/" element={<RecipeList />} />
-      </Routes>
+      </Routes> */}
       <div class="container-fluid">
         <CategoryList />
       </div>
+
       {/* <div>
         {authStore.user ? (
           <Button onClick={openModal}>Add Ingredients</Button>
