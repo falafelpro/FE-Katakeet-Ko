@@ -1,5 +1,5 @@
 import { makeAutoObservable } from "mobx";
-import apis from "./apis";
+import api from "./api";
 import decode from "jwt-decode";
 
 class AuthStore {
@@ -11,13 +11,13 @@ class AuthStore {
 
   setUser = (token) => {
     localStorage.setItem("myToken", token);
-    apis.defaults.headers.common.Authorization = `Bearer ${token}`;
+    api.defaults.headers.common.Authorization = `Bearer ${token}`;
     this.user = decode(token);
   };
 
   signup = async (userData) => {
     try {
-      const res = await apis.post("/kk/signup", userData);
+      const res = await api.post("/kk/signup", userData);
       this.setUser(res.data.token);
     } catch (error) {
       console.log("AuthStore -> signup -> error", error);
@@ -26,7 +26,7 @@ class AuthStore {
 
   signin = async (userData) => {
     try {
-      const res = await apis.post("/kk/signin", userData);
+      const res = await api.post("/kk/signin", userData);
       this.setUser(res.data.token);
     } catch (error) {
       console.log("AuthStore -> signin -> error", error);
@@ -34,7 +34,7 @@ class AuthStore {
   };
 
   signout = () => {
-    delete apis.defaults.headers.common.Authorization;
+    delete api.defaults.headers.common.Authorization;
     localStorage.removeItem("myToken");
     this.user = null;
   };

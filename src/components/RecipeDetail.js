@@ -1,7 +1,7 @@
 import { React, useState } from "react";
-import IngredientModal from "./components/IngredientModal";
+import IngredientModal from "./IngredientModal";
 import { Button } from "react-bootstrap";
-import authStore from "./stores/authstore";
+import authStore from "../stores/authstore";
 import { observer } from "mobx-react";
 
 function RecipeDetail() {
