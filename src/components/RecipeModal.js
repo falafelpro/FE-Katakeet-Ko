@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Form, Modal, Button, InputGroup, FormControl } from "react-bootstrap";
 import recipeStore from "../stores/recipeStore";
 import ingredientStore from "../stores/ingredientStore";
-import Creatable, { useCreatable } from "react-select/creatable";
-import { observe } from "mobx";
+import Creatable from "react-select/creatable";
 import { observer } from "mobx-react";
 
 const customStyles = {
