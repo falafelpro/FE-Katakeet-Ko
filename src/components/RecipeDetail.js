@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import IngredientModal from "./IngredientModal";
-import { Button } from "react-bootstrap";
-import authStore from "../stores/authstore";
 import IngredientList from "./IngredientList";
 import { observer } from "mobx-react";
 import recipeStore from "../stores/recipeStore";
@@ -25,10 +23,7 @@ function RecipeDetail() {
         <IngredientList ingredients={recipe.ingredients} />
         <div className="notepad">
           <div className="top"></div>
-          <div className="paper" contenteditable="true">
-            Step 1: <br></br>
-            Step 2:
-          </div>
+          <div className="paper" contenteditable="true"></div>
         </div>
       </div>
       {/* {authStore.user && <Button onClick={openModal}>Add Ingredients</Button>} */}

@@ -17,7 +17,7 @@ function RecipeItem({ recipe }) {
       <Link to={`/${recipe.slug}`}>
         <img className="card-image" src={recipe.image} alt="Logo" />
       </Link>
-      <div className="card-text">{recipe.slug}</div>
+      {/* <div className="card-text">{recipe.slug}</div> */}
       {/* <div className="card-like-bar">
         <div className="like-text">like-text</div>
       </div> */}
