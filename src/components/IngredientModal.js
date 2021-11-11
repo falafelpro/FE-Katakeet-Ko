@@ -3,6 +3,7 @@ import { Form, Modal, Button, InputGroup } from "react-bootstrap";
 import ingredientStore from "../stores/ingredientStore";
 
 function IngredientModal(props) {
+  // REVIEW: Destructure your props ({isOpen, etc})
   const [ingredient, setIngredient] = useState({
     name: "",
   });

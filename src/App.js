@@ -10,7 +10,9 @@ function App() {
     <div className="App">
       <NavBar />
       <Routes>
+        {/* REVIEW: Why not call it /recipes */}
         <Route exact path="/" element={<RecipeList />} />
+        {/* REVIEW: Why not call it /recipes/:recipeSlug */}
         <Route path="/:recipeSlug" element={<RecipeDetail />} />
       </Routes>
     </div>

@@ -19,6 +19,7 @@ function RecipeItem({ recipe }) {
       </Link>
       <div className="card-text">{recipe.slug}</div>
       <div className="card-like-bar">
+        {/* REVIEW: Remove commented out code */}
         <div className="like-text">{/* <b>4</b> nawaf. */}</div>
       </div>
     </div>

@@ -15,14 +15,19 @@ const customStyles = {
     display: "fit-content",
   }),
 };
-
+// REVIEW: Why is this outside the component. This is bad practice
+// REVIEW: Why are you saving it in a variable?
 const ingredientList = ingredientStore.ingredients;
+// REVIEW: Remove console log if you're done with it
 console.log(ingredientList);
+// REVIEW: If you remove the const above, this can be ingredientList
+// REVIEW: Don't be lazy and say `ingred`, change it to `ingredient`
 const ingredientListTrasformedToSelectList = ingredientList.map((ingred) => ({
   ...ingred,
   label: ingred.name,
   value: ingred._id,
 }));
+// REVIEW: Remove console log if you're done with it
 console.log(ingredientListTrasformedToSelectList);
 
 function RecipeModal({ category, closeModal, isOpen }) {
@@ -41,6 +46,7 @@ function RecipeModal({ category, closeModal, isOpen }) {
   const handleSelectChange = (value) => {
     setSelectValue(value);
   };
+  // REVIEW: Remove console log if you're done with it
 
   console.log(category);
   const handleChange = (e) =>

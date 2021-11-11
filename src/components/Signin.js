@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-modal";
 import authStore from "../stores/authstore";
 
+// REVIEW: Move this to a styles.js file and import it here
 const customStyles = {
   content: {
     top: "50%",

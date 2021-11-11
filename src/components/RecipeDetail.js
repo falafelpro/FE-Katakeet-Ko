@@ -13,9 +13,11 @@ function RecipeDetail() {
   const openModal = () => setIsOpen(true);
 
   const slug = useParams().recipeSlug;
+  // REVIEW: A better way to write this: if(recipeStore.loading)
   if (recipeStore.loading === true) {
     return <h1>Loading...</h1>;
   }
+  // REVIEW: Should be recipe instead of info
   const recipe = recipeStore.recipes.find((info) => info.slug === slug);
 
   return (
@@ -31,6 +33,7 @@ function RecipeDetail() {
           </div>
         </div>
       </div>
+      {/* // If your ternary operator does not have an else, replace it with && */}
       {authStore.user ? (
         <Button onClick={openModal}>Add Ingredients</Button>
       ) : null}

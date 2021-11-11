@@ -5,6 +5,7 @@ function CategoryItem({ category, setCategory }) {
   return (
     <div className="col-1">
       <div className="card-block">
+        {/* REVIEW: img is a self-closing tag <img /> */}
         <img
           src={category.image}
           alt={category.name}

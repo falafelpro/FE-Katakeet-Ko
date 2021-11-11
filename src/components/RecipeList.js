@@ -12,6 +12,7 @@ function RecipeList() {
   const openModal = () => setIsOpen(true);
   const [category, setCategory] = useState(null);
 
+  // REVIEW: Add a key to your RecipeItem
   const recipesList = recipeStore.recipes.map((recipe) => (
     <RecipeItem recipe={recipe} />
   ));

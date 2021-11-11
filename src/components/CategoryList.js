@@ -11,6 +11,7 @@ function CategoryList(props) {
   const closeModal = () => setIsOpen(false);
   const openModal = () => setIsOpen(true);
 
+  // REIVEW: Add a key
   const categoryList = categoryStore.categories.map((category) => (
     <CategoryItem category={category} setCategory={props.setCategory} />
   ));
