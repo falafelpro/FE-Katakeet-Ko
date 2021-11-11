@@ -11,7 +11,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route exact path="/" element={<RecipeList />} />
-        <Route path="/recipe" element={<RecipeDetail />} />
+        <Route path="/:recipeSlug" element={<RecipeDetail />} />
       </Routes>
     </div>
   );
