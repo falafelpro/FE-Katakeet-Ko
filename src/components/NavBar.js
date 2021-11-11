@@ -12,7 +12,7 @@ function NavBar() {
     <div>
       <Navbar bg="dark" variant="dark">
         <Container fluid>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand>
             <Link to="/">
               <img
                 alt="NavLogo"
@@ -24,6 +24,7 @@ function NavBar() {
             </Link>
             Katakeet Ko.
           </Navbar.Brand>
+
           <Nav>
             {authStore.user ? (
               <>

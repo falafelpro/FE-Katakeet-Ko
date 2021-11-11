@@ -3,10 +3,8 @@ import { observer } from "mobx-react";
 
 function IngredientItem({ ingredient }) {
   return (
-    <div className="col-1">
-      <div className="ingredient-block">
-        <p>{ingredient.name}</p>
-      </div>
+    <div>
+      <div className="ingredient-block">{ingredient.name}</div>
     </div>
   );
 }
