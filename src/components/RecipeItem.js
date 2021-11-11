@@ -18,9 +18,9 @@ function RecipeItem({ recipe }) {
         <img className="card-image" src={recipe.image} alt="Logo" />
       </Link>
       <div className="card-text">{recipe.slug}</div>
-      <div className="card-like-bar">
-        <div className="like-text">{/* <b>4</b> nawaf. */}</div>
-      </div>
+      {/* <div className="card-like-bar">
+        <div className="like-text">like-text</div>
+      </div> */}
     </div>
   );
 }

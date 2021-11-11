@@ -18,7 +18,7 @@ function CategoryList(props) {
   return (
     <div>
       <div className="category-container">
-        <div>
+        <div className="category-button">
           {authStore.user ? (
             <button className="category-add" onClick={openModal}>
               <img src={addCategoryButton} alt="addCategory" />
