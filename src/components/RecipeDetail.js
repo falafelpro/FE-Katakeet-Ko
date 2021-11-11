@@ -4,11 +4,17 @@ import { Button } from "react-bootstrap";
 import authStore from "../stores/authstore";
 import IngredientList from "./IngredientList";
 import { observer } from "mobx-react";
+import recipeStore from "../stores/recipeStore";
+import { Navigate, useParams } from "react-router";
 
 function RecipeDetail() {
   const [isOpen, setIsOpen] = useState(false);
   const closeModal = () => setIsOpen(false);
   const openModal = () => setIsOpen(true);
+
+  const slug = useParams().recipeSlug;
+  const detail = recipeStore.find((info) => info.slug === slug);
+  if (!detail) return <Navigate to="/" />;
 
   return (
     <div>
