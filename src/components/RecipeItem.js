@@ -1,5 +1,7 @@
 import React from "react";
 import "./Card.css";
+import { Link } from "react-router-dom";
+
 function RecipeItem({ recipe }) {
   return (
     <div className="card m-2 border">
@@ -9,15 +11,15 @@ function RecipeItem({ recipe }) {
         </div>
         <div className="card-title-group">
           <h5 className="card-title">{recipe.name}</h5>
-          <div className="card-date">{recipe.createdAt}</div>
+          {/* <div className="card-date">{recipe.createdAt}</div> */}
         </div>
       </div>
-      <img className="card-image" src={recipe.image} alt="Logo" />
+      <Link to={`/${recipe.slug}`}>
+        <img className="card-image" src={recipe.image} alt="Logo" />
+      </Link>
       <div className="card-text">{recipe.slug}</div>
       <div className="card-like-bar">
-        <div className="like-text">
-          <b>4</b> nawaf.
-        </div>
+        <div className="like-text">{/* <b>4</b> nawaf. */}</div>
       </div>
     </div>
   );
