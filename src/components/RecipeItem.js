@@ -5,7 +5,7 @@ function RecipeItem({ recipe }) {
     <div className="card m-2 border">
       <div className="card-header">
         <div className="profile">
-          <span className="letter">{recipe.owner.name}</span>
+          <span className="letter">{recipe.owner?.name}</span>
         </div>
         <div className="card-title-group">
           <h5 className="card-title">{recipe.name}</h5>

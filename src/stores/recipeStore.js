@@ -19,10 +19,15 @@ class RecipeStore {
 
   createRecipe = async (recipe) => {
     try {
-      const response = await api.post("/recipes", recipe);
+      console.log(recipe);
+      const formData = new FormData();
+      for (const key in recipe) {
+        formData.append(key, recipe[key]);
+      }
+      const response = await api.post("/recipes", formData);
       this.recipes.push(response.data);
     } catch (error) {
-      console.error("RecipeStore -> createRecipe -> error", error);
+      console.error("CategoryStore -> createCategory -> error", error);
     }
   };
 }
