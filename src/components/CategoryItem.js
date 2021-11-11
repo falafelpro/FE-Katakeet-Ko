@@ -9,7 +9,7 @@ function CategoryItem({ category, setCategory }) {
           src={category.image}
           alt={category.name}
           onClick={() => setCategory(category)}
-        ></img>
+        />
         <p>{category.name}</p>
       </div>
     </div>

@@ -16,11 +16,11 @@ function RecipeDetail() {
   if (recipeStore.loading === true) {
     return <h1>Loading...</h1>;
   }
-  const recipe = recipeStore.recipes.find((info) => info.slug === slug);
+  const recipe = recipeStore.recipes.find((recipe) => recipe.slug === slug);
 
   return (
     <div>
-      <h1>{recipe.name}</h1>
+      <h1 className="recipe-title">{recipe.name}</h1>
       <div className="recipe-content-container">
         <IngredientList ingredients={recipe.ingredients} />
         <div className="notepad">
@@ -31,9 +31,7 @@ function RecipeDetail() {
           </div>
         </div>
       </div>
-      {authStore.user ? (
-        <Button onClick={openModal}>Add Ingredients</Button>
-      ) : null}
+      {/* {authStore.user && <Button onClick={openModal}>Add Ingredients</Button>} */}
       <IngredientModal isOpen={isOpen} closeModal={closeModal} />
     </div>
   );
