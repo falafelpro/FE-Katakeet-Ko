@@ -4,6 +4,8 @@ import api from "./api";
 class RecipeStore {
   recipes = [];
 
+  loading = true;
+
   constructor() {
     makeAutoObservable(this);
   }
@@ -12,6 +14,7 @@ class RecipeStore {
     try {
       const response = await api.get("/recipes");
       this.recipes = response.data;
+      this.loading = false;
     } catch (error) {
       console.error("RecipeStore -> fetchRecipes -> error", error);
     }
