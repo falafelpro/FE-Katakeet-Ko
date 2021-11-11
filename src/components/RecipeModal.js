@@ -1,17 +1,46 @@
 import React, { useState, useEffect } from "react";
 import { Form, Modal, Button, InputGroup, FormControl } from "react-bootstrap";
 import recipeStore from "../stores/recipeStore";
+import ingredientStore from "../stores/ingredientStore";
+import Creatable, { useCreatable } from "react-select/creatable";
+import { observe } from "mobx";
+import { observer } from "mobx-react";
+
+const customStyles = {
+  option: (provided, state) => ({
+    ...provided,
+    borderBottom: "1px dotted pink",
+    color: state.isSelected ? "red" : "blue",
+    padding: 20,
+    display: "fit-content",
+  }),
+};
+
+const ingredientList = ingredientStore.ingredients;
+console.log(ingredientList);
+const ingredientListTrasformedToSelectList = ingredientList.map((ingred) => ({
+  ...ingred,
+  label: ingred.name,
+  value: ingred._id,
+}));
+console.log(ingredientListTrasformedToSelectList);
 
 function RecipeModal({ category, closeModal, isOpen }) {
   const [recipe, setRecipe] = useState({
     name: "",
     image: "",
-    //category: category._id,
+    category: null,
   });
+  const [selectValue, setSelectValue] = useState("");
+
   // if any change happened in the category the set the recipe.
   useEffect(() => {
     if (category) setRecipe({ ...recipe, category: category._id });
   }, [category]);
+
+  const handleSelectChange = (value) => {
+    setSelectValue(value);
+  };
 
   console.log(category);
   const handleChange = (e) =>
@@ -21,6 +50,7 @@ function RecipeModal({ category, closeModal, isOpen }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    //delete ingredientListTrasformedToSelectList.label
     recipeStore.createRecipe(recipe);
     closeModal(); // this is to close the modal that is shown
   };
@@ -50,6 +80,18 @@ function RecipeModal({ category, closeModal, isOpen }) {
               placeholder="Image"
             />
           </InputGroup>
+
+          <InputGroup className="mb-3">
+            <Creatable
+              isClearable
+              isMulti
+              onChange={(value) => handleSelectChange(value)}
+              options={ingredientListTrasformedToSelectList}
+              value={selectValue}
+              styles={customStyles}
+            />
+          </InputGroup>
+
           <Button className="" variant="primary" onClick={handleSubmit}>
             Create Recipe
           </Button>
@@ -60,4 +102,4 @@ function RecipeModal({ category, closeModal, isOpen }) {
   );
 }
 
-export default RecipeModal;
+export default observer(RecipeModal);
